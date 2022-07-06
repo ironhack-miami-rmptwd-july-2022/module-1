@@ -1,0 +1,19 @@
+/* A selector is what is used to target an html element in order to give it styling */
+
+/* selector types at tags (name of the html tag), ids (name of the id wth # in front of it) and classes (name of the class with a period in front of it) */
+
+body {
+    /* padding: 0 25px 0 25px; clock wise top, right, bottom, left*/
+    /* padding: 0 25px 0; top, sides, bottom*/
+    padding: 0 25px; /* top & bottom, sides */
+    /* padding: 25px; all sides*/
+    /* padding and margin have same value patterns */
+}
+/* using deep selectors we can target the 2nd h2 element in the section-2 id tag of the html in order to give it styling */
+#section-2 h2:nth-child(2) {
+    background-color: orangered;
+    margin: 0;
+    margin-bottom: 200px;
+    padding-top: 135px;
+    border: 9px solid limegreen;
+}
