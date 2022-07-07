@@ -9,6 +9,7 @@ body {
     /* padding: 25px; all sides*/
     /* padding and margin have same value patterns */
 }
+
 /* using deep selectors we can target the 2nd h2 element in the section-2 id tag of the html in order to give it styling */
 #section-2 h2:nth-child(2) {
     background-color: orangered;
