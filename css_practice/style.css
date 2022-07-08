@@ -1,0 +1,46 @@
+body {
+    background-color: hotpink;
+    padding-top: 2.5rem;
+}
+
+img {
+    /* for image sizing you do not want to modify both the height && width. You should only modify one or the other */
+    width: 16rem;
+}
+
+hr {
+    width: 32vw;
+    border: 6px solid white;
+    height: 0.3rem; /* height is a property you normally do not use for hr's (horizontal lines) */
+    border-style: ridge;
+}
+
+div#container {
+    padding: 0 28rem;
+    background-image: url("./images/breakfast.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vw;
+    background-size: contain;
+}
+
+#container section,
+footer {
+    color: #ffffff;
+}
+
+/* nav || #topnav || .navigation */
+#topnav {
+    background-color: lightgray;
+    height: 2.5rem;
+    position: fixed;
+    /* width: 100vw; */
+    width: 94vw;
+    padding: 25px 40px 0px;
+    top: 0;
+    left: 0;
+}
+
+.navigation span {
+    margin: 0px 10.9rem;
+}
