@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 3.5rem 6rem 0;
+    background-color: #cca1dd;
+}
+
+nav {
+    background-color: cyan;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 96vw;
+    padding: 0 2vw;
+    height: 3.5rem;
+    /* flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 24%;
+}
+
+nav div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 8%;
+}
+
+/* flexbox - to center content within an element */
+/* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+/* nav a:nth-child(1) img {
+    width: 6rem;
+} */
+
+nav > a img {
+    width: 6rem;
+}
+
+nav div#auth-links a.logout {
+    /* visibility: none; */
+    display: none;
+}
+
+.container {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    /* flex-flow takes the values of both flex-direction and flex-wrap respectively */
+    flex-flow: row wrap;
+}
+
+.container div.box {
+    width: 24vw;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container div.box > img {
+    width: 100%;
+}
+
+.container div.box div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
