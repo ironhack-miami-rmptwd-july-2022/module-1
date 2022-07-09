@@ -1,3 +1,8 @@
+/* you use media queries to style your page(s) based on the view port width */
+/* **normally** you design mobile first and work your way up to larger screen sizes */
+
+/* you can see a list of media query types and features here => https://preview.my.ironhack.com/lms/courses/course-v1:IRONHACK+WDPT+202207_RMTUS/modules/ironhack-course-chapter_2/units/ironhack-course-chapter_2-sequential_2-vertical_1 */
+
 body {
     margin: 0;
     padding: 3.5rem 6rem 0;
@@ -50,6 +55,10 @@ nav div#auth-links a.logout {
     display: none;
 }
 
+h1 {
+    text-align: center;
+}
+
 .container {
     display: flex;
     /* flex-direction: row; */
@@ -79,4 +88,24 @@ nav div#auth-links a.logout {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 720px) {
+    nav {
+        background-color: rgb(208, 201, 240);
+    }
+
+    body {
+        background-color: rgb(228, 228, 184);
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    nav {
+        background-color: limegreen;
+    }
+
+    body {
+        background-color: orange;
+    }
 }
