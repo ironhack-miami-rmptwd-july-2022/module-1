@@ -470,5 +470,8 @@ const myAddresses = {
 console.log({ answer: myAddresses.friends[0].friend2.streetName });
 console.log({ answer2: myAddresses.friends[2][3] });
 console.log({ answer3: myAddresses.ironhack.streetName });
+console.log({
+    answer4: myAddresses.friends[0].friend2.otherFriends[2][8].blah,
+});
 
 // =========================================
