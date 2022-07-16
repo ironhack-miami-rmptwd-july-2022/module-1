@@ -244,6 +244,124 @@ randomArray.forEach((name, i) => {
 
 console.log({ scrambledNamesArray: randomArray });
 
+// >>>>>>>>>>  Map Loop <<<<<<<<<<<<<
+// a map is used to map through an array and return a new version of the original array; This is used so that you "DO NOT" modify the original array.
+
+const scrammbledNames = randomArray.map((name, i) => {
+    console.log({
+        name,
+        i,
+        scrammbled: name.toLowerCase().split("").sort().join("").toUpperCase(),
+    });
+    return name.toLowerCase().split("").sort().join("").toUpperCase();
+});
+
+const vacationLocations = [
+    {
+        state: "Hawaii",
+        city: "Kona",
+        timeInMonths: 12,
+    },
+    {
+        state: "Michigan",
+        city: "Detroit",
+        timeInMonths: 2,
+    },
+    {
+        state: "New York",
+        city: "New York",
+        timeInMonths: 1,
+    },
+    {
+        state: "Florida",
+        city: "Miami",
+        timeInMonths: 4,
+    },
+];
+
+// the parameter that you create is equal to the element in the index while the loop is running. For the below example the first time the loop runs blah = {
+//   state: "Hawaii",
+//   city: 'Kona',
+//   timeInMonths: 12
+// },   which is the first index in vacationLocations
+const destinationCommentsArray = vacationLocations.map((blah) => {
+    if (blah.timeInMonths > 3) {
+        blah.comment =
+            "Could have taken a shrter trip to save money for the the next trip";
+    } else if (blah.timeInMonths === 1) {
+        blah.quote = "Way to short!!";
+    } else {
+        blah.random = "don't know what to say";
+    }
+    return blah;
+});
+
+console.log({ vacationLocations, destinationCommentsArray });
+
+// >>>>>>>>>>>>>>. Filter Loop <<<<<<<<<<<<
+// filter returns the elemt if the condition is true else it will not return the element. Filter is another good way to create a new array without modifying the original
+
+const team1 = [
+    {
+        playerName: "Blah",
+        playerNumber: 32,
+        playerStamina: 60,
+        playerShoot: 15,
+        playerPass: 89,
+    },
+    {
+        playerName: "Blah2",
+        playerNumber: 22,
+        playerStamina: 30,
+        playerShoot: 75,
+        playerPass: 19,
+    },
+    {
+        playerName: "Blah3",
+        playerNumber: 12,
+        playerStamina: 45,
+        playerShoot: 55,
+        playerPass: 69,
+    },
+];
+
+console.log({ randomArray, scrammbledNames });
+
+const goodPassing = team1
+    .map((player) => {
+        if (player.playerPass > 50) {
+            return player;
+        }
+    })
+    .filter((elem) => !!elem);
+
+const goodShoot = team1.filter((player) => {
+    // if(player.playerShoot > 53) {
+    //   return true
+    // }
+
+    return player.playerShoot > 53;
+});
+
+// const goodShoot = team1.filter(player => player.playerShoot > 53)
+
+const goodStamina = team1
+    .map((player) => {
+        if (player.playerStamina > 48) {
+            player.playerPhrase = "I can run for days on in";
+            return player;
+        }
+    })
+    .filter((player) => !!player);
+
+console.log({ team1, goodPassing, goodShoot, goodStamina });
+
+const mySpecificNames = randomArray.filter((name) => {
+    return name.includes("i") || name.includes("I");
+});
+
+console.log({ randomArray, mySpecificNames });
+
 // =======================================
 
 // mathObj here is declared to be an object and cannot change from that, even though the key: value pairs within the object are treated as let declarations and can be changed. *** there are some cases where this does not happen ***
