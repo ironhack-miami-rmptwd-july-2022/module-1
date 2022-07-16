@@ -423,3 +423,52 @@ console.log(makeNModel("HoNDa", "CiViC"));
 console.log(getCarMakeNYear("HoNDa", 1987));
 
 // =========================================
+
+// ================ Objects ================
+
+const myAddresses = {
+    ironhack: {
+        number: 120,
+        streetName: "sw 8 str",
+        city: "Brickell",
+        state: "Florida",
+    },
+    mom: null,
+    dad: undefined,
+    friends: [
+        {
+            friend1: {
+                number: 556,
+                streetName: "sw 12 str",
+                city: "Brickell",
+                state: "Florida",
+                visited: false,
+                name: {
+                    first: "Michael",
+                    last: "Kingston",
+                },
+            },
+            friend2: {
+                number: 1120,
+                streetName: "sw 11 str",
+                city: "Brickell",
+                state: "Florida",
+                visited: null,
+                otherFriends: [
+                    "friend1",
+                    "friend2",
+                    [1, 2, 3, 4, 5, "blah", false, null, { blah: "blah2" }],
+                ],
+            },
+        },
+        false,
+        [54, 23, "cat", "some Other Animal"],
+    ],
+};
+
+// console.log({answer: myAddresses.friends[1].friend2.streetName})
+console.log({ answer: myAddresses.friends[0].friend2.streetName });
+console.log({ answer2: myAddresses.friends[2][3] });
+console.log({ answer3: myAddresses.ironhack.streetName });
+
+// =========================================
