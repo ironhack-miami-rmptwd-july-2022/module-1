@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0 5vw;
+    background-color: darkgray;
+}
+
+div#nameDisplay h3.theName {
+    color: rgb(23, 73, 22);
+}
