@@ -7,6 +7,7 @@ const randomNameButton = document.querySelector('#nameRandomizerButton');
 const nameDisplay = document.querySelector('div#nameDisplay h3.theName');
 const listOfNames = [...document.querySelectorAll('#nameDisplay ul li')].map(name => name.innerHTML);
 const longListOfNames = [...listOfNames, 'Marcos', 'Mich', 'Laz', 'Ryan']
+let newList = [];
 
 // These are 2 methods of converting nodelist into an array so that you may loop through them using the built in js loop methods (ie: .filter(), .forEach(), .map())
 
@@ -17,7 +18,10 @@ const randomNum = (maxLimit) => {
     return Math.floor(Math.random() * maxLimit)
     }
 
-
+const getUpdatedList = () => {
+    const result = longListOfNames.filter(name => !newList.includes(name))
+    newList = result;
+}
 
 randomNameButton.addEventListener('click', () => {
     // console.log('Button Clicked');
