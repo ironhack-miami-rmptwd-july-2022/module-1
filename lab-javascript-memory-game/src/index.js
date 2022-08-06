@@ -44,9 +44,24 @@ window.addEventListener('load', (event) => {
     `;
   });
 
+  // below you will the cards by switching te class names then after the setTimeout you can set the html to be the normal backs of the cards
+  let htmlShowCards = ''
+  memoryGame.cards.forEach((pic) => {
+    htmlShowCards += `
+      <div class="card" data-card-name="${pic.name}">
+        <div class="front" name="${pic.img}"></div>
+        <div class="back" style="background: url(img/${pic.img}) no-repeat"></div>
+      </div>
+    `;
+  });
+
 
   // Add all the divs to the HTML
+  // this is a way to show your cards prior to starting the game
+  document.querySelector('#memory-board').innerHTML = htmlShowCards;
+setTimeout(() => {
   document.querySelector('#memory-board').innerHTML = html;
+}, 1000)
 
   // Bind the click event of each element to a function
   document.querySelectorAll('.card').forEach((card) => {
