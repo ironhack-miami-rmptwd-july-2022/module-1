@@ -34,6 +34,40 @@ function toggleCards(element, classesArray) {
 }
 
 window.addEventListener('load', (event) => {
+
+  // ======= Start KeyPress Events ==========
+  // key events: 'keypress' is used to register number and letter keys when press, 'keydown' & 'keyup' are used to register any key on the keyboard that is pressed
+
+  document.addEventListener('keydown', (event) => {
+    const h1Tag = document.querySelector('h1');
+    // const h1Tag = document.getElementsByTagName('h1')[0];
+    console.log({event: event, theH1: h1Tag.innerHTML});
+
+    switch(event.code) {
+      case 'ArrowUp':
+      case 'KeyW':
+        h1Tag.innerHTML = 'Superhero Memory Game Up'
+        break;
+      case 'ArrowRight':
+      case 'KeyD':
+        h1Tag.innerHTML = 'Superhero Memory Game Right'
+        break;
+      case 'ArrowLeft':
+      case 'KeyA':
+        h1Tag.innerHTML = 'Superhero Memory Game Left'
+        break;
+      case 'ArrowDown':
+      case 'KeyS':
+        h1Tag.innerHTML = 'Superhero Memory Game Down'
+        break;
+      default:
+        h1Tag.innerHTML = 'Superhero Memory Game';
+    }
+  })
+  
+  // ======== End KeyPress Events ===========
+
+
   let html = '';
   memoryGame.cards.forEach((pic) => {
     html += `
@@ -76,6 +110,8 @@ setTimeout(() => {
       // console.log({clicked: clicked.innerHTML, guessed: guessed.innerHTML});
 
       if(!card.classList.contains('blocked')) {
+        // ['front', 'back'].forEach((className) => card.children[0].classList.toggle(className));
+
         toggleCards(card.children[0], ['front', 'back']);
         toggleCards(card.children[1], ['front', 'back']);
         
@@ -134,3 +170,59 @@ setTimeout(() => {
     });
   });
 });
+
+// =============   How to Create a 2D Array ================
+
+
+// let myGrid = [];
+
+// class Player {
+//   constructor(x, y) {
+//     this.x = x
+//     this.y = y
+//     this.name = `Player ${x}${y}`
+//   }
+
+//   showName() {
+//     return this.name
+//   }
+// }
+
+
+// const gridBuilder = (columns, rows) => {
+//   let result = []
+//   for (let x = 0; x < columns; x++) {
+//     let = result[x] = []
+//     for (let y = 0; y < rows; y++) {
+//       if (x % 5 === 0 && y % 7 === 0) {
+//         result[x][y] = new Player(x, y)
+//       } else {
+//         result[x][y] = 'x'
+//       }
+//     }
+//     result.push(result[x]);
+//   }
+//   return result;
+// }
+// console.log({ myGrid })
+
+// myGrid = gridBuilder(10, 10);
+
+// console.log({ myGrid })
+
+// myGrid: [
+//   [' ', 'w', 'x', 'x', 'x', 'x', 'x', 'R', 'x', 'x'],
+//   ['R', 'w', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   [' ', 'w', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   [' ', ' ', 'Mob', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['w', 'w', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['R', 'x', 'x', 'x', 'x', 'x', 'x', 'R', 'x', 'x'],
+//   ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+//   ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+// ]
+
+
+// ====================================================
